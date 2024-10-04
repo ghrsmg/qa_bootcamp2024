@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class LeapYear {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        System.out.println("Introduceti anul (mai mare decat 1900 si mai mic decat 2016: ");
+        System.out.println("Introduceti anul (mai mare decat 1900 si mai mic decat 2016): ");
         int year = in.nextInt();
         if (year <1900 || year >2016){
             System.out.println("Anul trebuie sa fie intre 1900 si 2016");
