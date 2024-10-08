@@ -9,7 +9,7 @@ public class LeapYear {
             System.out.println("Anul trebuie sa fie intre 1900 si 2016");
         }
         else {
-         if((year %4 == 0 && year %100 != 0) || (year % 100 == 0 && year%400 != 0)){
+         if((year %4 == 0 && year %100 != 0) || (year % 100 == 0 && year%400 == 0)){
              System.out.println("Luna Februarie a anului " + year + " are 29 de zile");
          }
          else if (year == 2000){
