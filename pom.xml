@@ -6,18 +6,22 @@
     <artifactId>qa_bootcamp2024</artifactId>
     <version>1.0</version>
     <properties>
-        <maven.compiler.source>19</maven.compiler.source>
-        <maven.compiler.target>19</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
         <junitVersion>5.11.2</junitVersion>
         <lombokVersion>1.18.34</lombokVersion>
-        <suitefile>testSuites\runSuite.xml</suitefile>
+        <testngVersion>7.10.2</testngVersion>
+        <surefireVersion>3.5.1</surefireVersion>
+        <extentVersion>5.1.2</extentVersion>
+        <suiteFile>testSuites\runSuites.xml</suiteFile>
     </properties>
+
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
-            <version>5.11.2</version>
+            <version>${junitVersion}</version>
             <scope>test</scope>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
@@ -27,46 +31,44 @@
             <version>${lombokVersion}</version>
             <scope>provided</scope>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>5.11.2</version>
-            <scope>test</scope>
-        </dependency>
         <!-- https://mvnrepository.com/artifact/org.testng/testng -->
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>7.10.2</version>
+            <version>${testngVersion}</version>
             <scope>test</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-surefire-plugin -->
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>${surefireVersion}</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
         <dependency>
             <groupId>com.aventstack</groupId>
             <artifactId>extentreports</artifactId>
-            <version>5.1.2</version>
+            <version>${extentVersion}</version>
         </dependency>
 
 
-
-
-
     </dependencies>
+
     <build>
         <pluginManagement>
             <plugins>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
-                    <version>3.5.1</version>
+                    <version>${surefireVersion}</version>
                     <configuration>
                         <suiteXmlFiles>
-                            <suiteXmlFile>${suitefile}</suiteXmlFile>
+                            <suiteXmlFile>${suiteFile}</suiteXmlFile>
                         </suiteXmlFiles>
                     </configuration>
                 </plugin>
             </plugins>
         </pluginManagement>
     </build>
+
 </project>
