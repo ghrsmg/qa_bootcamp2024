@@ -2,7 +2,6 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
-import jdk.jfr.Enabled;
 import org.testng.Assert;
 import org.testng.ITestContext;
 import org.testng.annotations.*;
@@ -16,7 +15,7 @@ public class CalculatorNgTest {
 
     Calculator c;
     final String additionFailMessage = "Addition failed.";
-    ExtentReports extent = new ExtentReports();;
+    ExtentReports extent = new ExtentReports();
     ITestContext testContext;
 
     @DataProvider
@@ -85,7 +84,7 @@ public class CalculatorNgTest {
         mytest.log(Status.PASS, "test finished");
         mytest.pass("finished");
     }
-    @Ignore
+
     @Test(testName = "AdditionParameters", groups = {"addition", "calculator"})
     @Parameters({"exp", "d1", "d2", "op", "errMess"})
     public void test04(String exp, String d1, String d2, String op, String errMess) {
