@@ -6,7 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -18,6 +17,7 @@ import java.util.Properties;
 public class Utils {
 
     private static final String configFile = "config.properties";
+
     public static String getConfigProperty(String property) {
         Properties configProps = new Properties();
         String baseUrl = "";
@@ -32,16 +32,9 @@ public class Utils {
 
     public static WebDriver getDriver() {
         WebDriver driver;
-        Properties configProps = new Properties();
+//        System.out.println(System.getenv("AUTO_BROWSER"));
         String browser = getConfigProperty("browser");
 
-        try {
-            configProps.load(new FileInputStream(configFile));
-            System.out.println(System.getenv("AUTO_BROWSER"));
-            browser = getConfigProperty("browser").toLowerCase();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
         switch(browser) {
             case "chrome": {
                 driver = new ChromeDriver();
@@ -59,12 +52,21 @@ public class Utils {
                 driver = new ChromeDriver();
             }
         }
-     //  driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         return driver;
     }
-    public static WebElement waitForElement(WebDriver driver, long seconds, By locator){
-        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(seconds));
+
+
+    public static WebElement waitForElement(WebDriver driver, long seconds, By locator) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
         return wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+
+    }
+
+    public static WebElement waitForElementClickable(WebDriver driver, long seconds, By locator) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
+        return wait.until(ExpectedConditions.elementToBeClickable(locator));
+
     }
 
 }
