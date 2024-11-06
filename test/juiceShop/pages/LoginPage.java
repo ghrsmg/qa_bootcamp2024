@@ -43,4 +43,12 @@ public class LoginPage extends BasePage{
         newUserLink.click();
     }
 
+
+    public String getLoginText() {
+        return driver.findElement(By.cssSelector(LOGIN_TEXT_SELECTOR)).getText();
+    }
+
+    public String getStaticLoginText() {
+        return LOGIN_TEXT_VALUE;
+    }
 }

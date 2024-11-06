@@ -44,16 +44,15 @@ public class RegisterTest extends BaseTest{
     @Test(dataProvider = "RegistrationDataProvider")
     public void negativeRegister1(String username, String password, String securityAns){
         driver.get(baseUrl + "/#/register");
-//        MainPage mp = new MainPage(driver);
-//        mp.openSideMenu();
-//        mp.clickLoginFromSideMenu();
-//        LoginPagePF lp = new LoginPagePF(driver);
-//        lp.dismissModal();
-//        Assert.assertEquals(lp.getLoginText(),lp.getStaticLoginText());
-//        lp.newUser();
+        MainPage mp = new MainPage(driver);
+        mp.openSideMenu();
+        mp.clickLoginFromSideMenu();
+        LoginPage lp = new LoginPage(driver);
+        lp.awaitDismissModal();
+        Assert.assertEquals(lp.getLoginText(),lp.getStaticLoginText());
+        lp.newUser();
         RegistrationPage rp = new RegistrationPage(driver);
         Assert.assertEquals(rp.getRegisterHeader(),rp.getRegisterPageStatic());
-        rp.dismissModal();
         rp.register(username, password, securityAns);
         Assert.assertEquals(rp.getEmailError(),rp.getStaticEmailError(),"You should provide a valid email");
         Assert.assertEquals(rp.getPasswordError(),rp.getStaticPasswordError(),"You should choose a correct password");

@@ -10,7 +10,6 @@ public class RegistrationPage extends BasePage {
     // register page
     private static final String REGISTER_HEADER = "body > app-root > div > mat-sidenav-container > mat-sidenav-content > app-register > div > mat-card > h1";
     private static final String REGISTER_EMAIL = "emailControl";
-    private static final String MODAL_SELECTOR = "#mat-dialog-0 > app-welcome-banner > div > div:nth-child(3) > button.mat-focus-indicator.close-dialog.mat-raised-button.mat-button-base.mat-primary.ng-star-inserted > span.mat-button-wrapper > mat-icon";//CSS
 
     private static final String REGISTER_PASSWORD = "passwordControl";
     private static final String REGISTER_CONFIRM = "repeatPasswordControl";
@@ -94,10 +93,7 @@ public class RegistrationPage extends BasePage {
     public String getStaticSecurityAnswerError(){
         return SECURITY_ANSWER_ERROR_TEXT;
     }
-    public void dismissModal(){
-        WebElement modalElement = driver.findElement(By.cssSelector(MODAL_SELECTOR));
-        modalElement.click();
-    }
+
 
 
 
