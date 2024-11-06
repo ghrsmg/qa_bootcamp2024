@@ -1,3 +1,5 @@
+package others;
+
 import org.testng.annotations.*;
 
 public class MyFirstTestngTests {
