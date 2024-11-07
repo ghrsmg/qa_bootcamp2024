@@ -1,17 +1,9 @@
 package juiceShop.tests;
 
-import juiceShop.frameworkUtils.Selectors;
-import juiceShop.frameworkUtils.Utils;
 import juiceShop.pages.LoginPage;
-import juiceShop.pages.LoginPagePF;
 import juiceShop.pages.MainPage;
 import juiceShop.pages.RegistrationPage;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -43,10 +35,10 @@ public class RegisterTest extends BaseTest{
     }
     @Test(dataProvider = "RegistrationDataProvider")
     public void negativeRegister1(String username, String password, String securityAns){
-        driver.get(baseUrl + "/#/register");
-        MainPage mp = new MainPage(driver);
-        mp.openSideMenu();
-        mp.clickLoginFromSideMenu();
+        driver.get(baseUrl + "/#/login");
+//        MainPage mp = new MainPage(driver);
+//        mp.dismissModal();
+//        mp.clickLoginFromMainPage();
         LoginPage lp = new LoginPage(driver);
         lp.awaitDismissModal();
         Assert.assertEquals(lp.getLoginText(),lp.getStaticLoginText());
