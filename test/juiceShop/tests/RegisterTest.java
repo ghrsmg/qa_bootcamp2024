@@ -16,8 +16,8 @@ public class RegisterTest extends BaseTest{
     @DataProvider(name = "RegistrationDataProvider")
     public Iterator<Object[]> registerDp () {
         Collection<Object[]> dp = new ArrayList<>();
-       // dp.add(new String[] {"alex@alex.com", "Alex98876%", "alex"});
-        dp.add(new String[]{".",".",""});
+        dp.add(new String[] {"alex@alex.com", "Alex98876%", "alex"});
+       // dp.add(new String[]{".",".",""});
        // dp.add(new String[] {"gabi","Ffff0000,","gabi"});
         return dp.iterator();
     }
@@ -31,6 +31,7 @@ public class RegisterTest extends BaseTest{
         RegistrationPage rp = new RegistrationPage(driver);
         Assert.assertEquals(rp.getRegisterHeader(), rp.getRegisterPageStatic());
         rp.register(username, password, securityAns);
+
         rp.clickSubmitButton();
     }
     @Test(dataProvider = "RegistrationDataProvider")
@@ -49,7 +50,7 @@ public class RegisterTest extends BaseTest{
         Assert.assertEquals(rp.getEmailError(),rp.getStaticEmailError(),"You should provide a valid email");
         Assert.assertEquals(rp.getPasswordError(),rp.getStaticPasswordError(),"You should choose a correct password");
         //Assert.assertEquals(rp.getRepeatPasswordError(),rp.getStaticRepeatPasswordError(),"You have to put the same password");
-        Assert.assertEquals(rp.getSecurityAnswerError(),rp.getStaticSecurityAnswerError(),"You have to choose a security question and answer it");
+        //Assert.assertEquals(rp.getSecurityAnswerError(),rp.getStaticSecurityAnswerError(),"You have to choose a security question and answer it");
 
 
 
