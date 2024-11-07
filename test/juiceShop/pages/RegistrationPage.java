@@ -14,20 +14,20 @@ public class RegistrationPage extends BasePage {
     private static final String REGISTER_PASSWORD = "passwordControl";
     private static final String REGISTER_CONFIRM = "repeatPasswordControl";
     private static final String SECURITY_QUESTION = "securityQuestion";
-    private static final String SECURITY_OPTION1 = "#mat-option-0 > span";
+    private static final String SECURITY_OPTION1 = "#mat-option-3 > span";
     private static final String SECURITY_ANSWER = "securityAnswerControl";
     private static final String REGISTER_SUBMIT_BUTTON = "registerButton";
     private static final String COOKIES_MODAL = "body > div.cc-window.cc-floating.cc-type-info.cc-theme-classic.cc-bottom.cc-right.cc-color-override--1225450786 > div > a";
 
     private static final String REGISTER_STATIC_TEXT = "User Registration";
-    private static final String PROVIDE_EMAIL_ERROR = "#mat-error-9";
-    private static final String PROVIDE_PASSWORD_ERROR = "#mat-error-10";
-    private static final String REPEAT_PASSWORD_ERROR = "#mat-error-11";
-    private static final String SECURITY_ANSWER_ERROR = "#mat-error-13";
-    private static final String PROVIDE_EMAIL_ERROR_TEXT = "Please provide an email address.";
-    private static final String PROVIDE_PASSWORD_ERROR_TEXT = "Please provide a password.";
+    private static final String PROVIDE_EMAIL_ERROR = "#mat-error-7";
+    private static final String PROVIDE_PASSWORD_ERROR = "#mat-error-8";
+    private static final String REPEAT_PASSWORD_ERROR = "#mat-error-9";
+    private static final String SECURITY_ANSWER_ERROR = "#mat-error-6";
+    private static final String PROVIDE_EMAIL_ERROR_TEXT = "Email address is not valid.";
+    private static final String PROVIDE_PASSWORD_ERROR_TEXT = "Password must be 5-40 characters long.";
     private static final String REPEAT_PASSWORD_ERROR_TEXT = "Please repeat your password.";
-    private static final String SECURITY_ANSWER_ERROR_TEXT = "#Please provide an answer to your security question.";
+    private static final String SECURITY_ANSWER_ERROR_TEXT = "Please provide an answer to your security question.";
 
     public RegistrationPage(WebDriver driver) {
         super(driver);

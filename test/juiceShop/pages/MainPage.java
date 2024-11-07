@@ -35,9 +35,13 @@ public class MainPage extends BasePage{
         WebElement openSideMenubutton = driver.findElement(By.cssSelector(OPEN_SIDE_MENU));
         openSideMenubutton.click();
     }
-    public void clickLoginFromMainPage(){
+    public void clickAccountButton(){
         WebElement accountButton = driver.findElement(By.cssSelector(ACCOUNT_BUTTON));
         accountButton.click();
+
+    }
+    public void clickLoginFromMainPage(){
+
         WebElement loginButton = driver.findElement(By.cssSelector(NAVBAR_LOGIN_BUTTON));
         loginButton.click();
     }
