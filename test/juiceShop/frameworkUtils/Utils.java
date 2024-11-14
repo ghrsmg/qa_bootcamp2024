@@ -39,50 +39,55 @@ public class Utils {
         WebDriver driver;
 //        System.out.println(System.getenv("AUTO_BROWSER"));
         String browser = getConfigProperty("browser");
-        Proxy proxy = new Proxy();
-        proxy.setHttpProxy("127.0.0.1:6969");
+
+//        Proxy proxy = new Proxy();
+//        proxy.setHttpProxy("127.0.0.1:6969");
 
         switch(browser) {
             case "chrome": {
                 ChromeOptions options = new ChromeOptions();
 //                Map<String, Object> prefs = new HashMap<String, Object>();
-                if(Boolean.parseBoolean(getConfigProperty("maximized"))){
-                    options.addArguments("--start-maximized");
+//                prefs.put("args", "[start-maximized, headless]");
+//                options.setExperimentalOption("prefs", prefs);
 
-                }
-               //options.addArguments("args","[start-maximized, headless]");
                 if(Boolean.parseBoolean(getConfigProperty("headless"))) {
                     options.addArguments("--headless");
+
                 }
-        //        options.setCapability("proxy",proxy);
+//                options.setCapability("proxy", proxy);
                 driver = new ChromeDriver(options);
+                if(Boolean.parseBoolean(getConfigProperty("maximized"))) {
+                    driver.manage().window().maximize();
+                }
                 break;
             }
             case "firefox": {
                 FirefoxOptions options = new FirefoxOptions();
- //               FirefoxProfile profile = new FirefoxProfile();
-//                profile.setPreference("browser.download.dir",".");
-//                options.setProfile(profile);
-
+                FirefoxProfile profile = new FirefoxProfile();
                 if(Boolean.parseBoolean(getConfigProperty("headless"))) {
                     options.addArguments("-headless");
                 }
+
+                profile.setPreference("browser.download.dir", ".");
+
+                options.setProfile(profile);
                 driver = new FirefoxDriver(options);
-                if(Boolean.parseBoolean(getConfigProperty("maximized"))){
+
+                if(Boolean.parseBoolean(getConfigProperty("maximized"))) {
                     driver.manage().window().maximize();
                 }
                 break;
             }
             case "edge": {
                 EdgeOptions options = new EdgeOptions();
-
+                if(Boolean.parseBoolean(getConfigProperty("maximized"))) {
+                    options.addArguments("--start-maximized");
+                }
                 if(Boolean.parseBoolean(getConfigProperty("headless"))) {
                     options.addArguments("--headless");
+
                 }
                 driver = new EdgeDriver(options);
-                if(Boolean.parseBoolean(getConfigProperty("maximized"))){
-                    driver.manage().window().maximize();
-                }
                 break;
             }
             default: {
@@ -103,21 +108,24 @@ public class Utils {
     public static WebElement waitForElementClickable(WebDriver driver, long seconds, By locator) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
         return wait.until(ExpectedConditions.elementToBeClickable(locator));
+    }
 
-    }
-    public static void scrollDown(WebDriver driver){
+    public static void scrollDown(WebDriver driver) {
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,250);","");
+        js.executeScript("window.scrollBy(0,document.body.scrollHeight);", "");
     }
-    public static void scrollToElement(WebDriver driver, WebElement element){
+
+    public static void scrollToElement(WebDriver driver, WebElement element) {
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].scrollIntoView(true);",element);
+        js.executeScript("arguments[0].scrollIntoView(true);", element);
     }
-    public static void printCookies(WebDriver driver){
-        Set<Cookie> cookies =  driver.manage().getCookies();
-        for(Cookie c : cookies){
+
+    public static void printCookies(WebDriver driver)  {
+        Set<Cookie> cookies = driver.manage().getCookies();
+        for(Cookie c : cookies) {
             System.out.println(c.toJson());
         }
     }
+
 
 }

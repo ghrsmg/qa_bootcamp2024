@@ -4,19 +4,21 @@ import juiceShop.frameworkUtils.Utils;
 import org.openqa.selenium.Cookie;
 import org.testng.annotations.Test;
 
-import java.util.Collection;
 import java.util.Set;
 
-public class CookieTest extends BaseTest{
+public class CookieTest extends  BaseTest {
+
     @Test
-    public void cookieTest(){
+    public void cookieTest() {
         driver.get(baseUrl + "/#/");
         Utils.printCookies(driver);
-        Cookie c = new Cookie("alexCookie","cookie-value");
+        Cookie c = new Cookie("alexCookie", "cookie_value");
         driver.manage().addCookie(c);
         Utils.printCookies(driver);
         driver.manage().deleteCookieNamed("alexCookie");
         driver.manage().deleteAllCookies();
         Utils.printCookies(driver);
+
     }
+
 }
