@@ -1,4 +1,4 @@
-package petStore.models;
+package test.java.petStore.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

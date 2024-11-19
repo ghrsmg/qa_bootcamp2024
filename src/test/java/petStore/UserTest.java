@@ -3,16 +3,17 @@ package petStore;
 import com.google.gson.Gson;
 import io.restassured.http.Method;
 import io.restassured.response.Response;
+import juiceShop.frameworkUtils.Utils;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import juiceShop.frameworkUtils.Utils;
-import petStore.models.User;
+
+import test.java.petStore.models.User;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 
-public class UserTest extends BaseTest{
+public class UserTest extends BaseTest {
 
     @DataProvider(name = "userDp")
     public Iterator<Object[]> userDp () {

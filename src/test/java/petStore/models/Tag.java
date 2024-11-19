@@ -1,4 +1,4 @@
-package petStore.models;
+package test.java.petStore.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor
-public class Category{
+public class Tag{
     private int id;
     private String name;
 }

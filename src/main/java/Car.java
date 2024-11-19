@@ -89,13 +89,13 @@ public class Car {
     }
     public void printCar(){
         System.out.println("-----------------------");
-        System.out.println("Car model: "+model);
-        System.out.println("Car color: "+color);
-        System.out.println("Car type: "+carType);
-        System.out.println("Car position: "+carPosition);
-        System.out.println("Car mileage: "+ currentMileage);
-        System.out.println("Car gear: "+currentGear);
-        System.out.println("Car speed: "+ currentSpeed);
+        System.out.println("main.Car model: "+model);
+        System.out.println("main.Car color: "+color);
+        System.out.println("main.Car type: "+carType);
+        System.out.println("main.Car position: "+carPosition);
+        System.out.println("main.Car mileage: "+ currentMileage);
+        System.out.println("main.Car gear: "+currentGear);
+        System.out.println("main.Car speed: "+ currentSpeed);
     }
 
 }

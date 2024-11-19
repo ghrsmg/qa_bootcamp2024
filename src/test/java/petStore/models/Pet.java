@@ -10,9 +10,9 @@ import java.util.ArrayList;
 @Getter @Setter @AllArgsConstructor @NoArgsConstructor
 public class Pet{
     private int id;
-    private Category category;
+    private test.java.petStore.models.Category category;
     private String name;
     private ArrayList<String> photoUrls;
-    private ArrayList<Tag> tags;
+    private ArrayList<test.java.petStore.models.Tag> tags;
     private String status;
 }

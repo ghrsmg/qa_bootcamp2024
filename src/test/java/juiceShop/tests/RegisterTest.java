@@ -11,7 +11,9 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 
-public class RegisterTest extends BaseTest{
+import static juiceShop.tests.BaseTest.baseUrl;
+
+public class RegisterTest extends BaseTest {
 
     @DataProvider(name = "RegistrationDataProvider")
     public Iterator<Object[]> registerDp () {

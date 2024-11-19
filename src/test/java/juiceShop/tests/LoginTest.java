@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import juiceShop.pages.LoginPage;
 import juiceShop.pages.LoginPagePF;
 
-public class LoginTest extends BaseTest{
+public class LoginTest extends BaseTest {
 
     @Test
     public void login01(){

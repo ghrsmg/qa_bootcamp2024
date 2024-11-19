@@ -45,11 +45,11 @@ public class CalculatorTest {
     }
     @Test
     public void testSquareRoot01(){
-        Assertions.assertEquals(8,c.compute(64,0,"SQRT"),"Square root failed!");
+        Assertions.assertEquals(8,c.compute(64,0,"SQRT"),"main.Square root failed!");
     }
     @Test
     public void testSquareRoot02(){
-        Assertions.assertEquals(Math.sqrt(2),c.compute(2,0,"SQRT"),"Square root failed!");
+        Assertions.assertEquals(Math.sqrt(2),c.compute(2,0,"SQRT"),"main.Square root failed!");
     }
     @AfterEach
     public void cleanTest(){

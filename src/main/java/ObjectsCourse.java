@@ -18,7 +18,7 @@ public class ObjectsCourse {
         dacia1300.printCar();
         Square squareabcd = new Square();
         squareabcd.setSide(4);
-        System.out.println("Square with side " + squareabcd.getLength() + " has are of " + squareabcd.getArea());
+        System.out.println("main.Square with side " + squareabcd.getLength() + " has are of " + squareabcd.getArea());
         for (String value : args) {
             Square cmdSquare = new Square();
             cmdSquare.setLength(Double.parseDouble(value));

@@ -1,19 +1,19 @@
 package Calculator;
 
 /**
- * This class is numerical Calculator.Calculator that implements the following Operators:
+ * This class is numerical main.Calculator.main.Calculator that implements the following Operators:
  * <ul>
  * <li>Add: +
  * <li>Subtract: -
  * <li>Multiply: *
- * <li>Square root: SQRT
+ * <li>main.Square root: SQRT
  * <li>Divide: /
  * </ul>
  * <p>
  * The operands can be any double number.
  * <p>
  * <b>Current implementation supports only two operands. </b>
- * Sample input: {@code Calculator.Calculator 1 + 2, having the output 1 + 2 = 3.}
+ * Sample input: {@code main.Calculator.main.Calculator 1 + 2, having the output 1 + 2 = 3.}
  */
 public class Calculator {
 	public static void main(String[] args) {
@@ -23,7 +23,7 @@ public class Calculator {
 					args[1]);
 			System.out.println(args[0] + args[1] + args[2] + " = " + result);
 		} else {
-			System.err.println("Please use the following syntax: Calculator.Calculator <operand1>  <operator> <operand2>");
+			System.err.println("Please use the following syntax: main.Calculator.main.Calculator <operand1>  <operator> <operand2>");
 		}
 	}
 

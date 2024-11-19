@@ -17,7 +17,7 @@
         <restAssuredVersion>5.5.0</restAssuredVersion>
         <hamcrestVersion>3.0</hamcrestVersion>
         <gsonVersion>2.9.0</gsonVersion>
-        <suiteFile>testSuites\runSuites.xml</suiteFile>
+        <suiteFile>testSuites/petStoreSuite.xml</suiteFile>
     </properties>
 
     <dependencies>
@@ -102,7 +102,18 @@
                         <suiteXmlFiles>
                             <suiteXmlFile>${suiteFile}</suiteXmlFile>
                         </suiteXmlFiles>
+                        <properties>
+                            <name>listener</name>
+                            <value>customReporting.CustomTestListener, customReporting.CustomTestReporter</value>
+                        </properties>
                     </configuration>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.apache.maven.surefire</groupId>
+                            <artifactId>surefire-testng</artifactId>
+                            <version>3.5.2</version>
+                        </dependency>
+                    </dependencies>
                 </plugin>
             </plugins>
         </pluginManagement>
